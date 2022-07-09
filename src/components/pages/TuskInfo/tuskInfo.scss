@@ -1,0 +1,26 @@
+
+.info {
+    margin: 0 auto;
+    padding: 30px;
+    width: 50%;
+    
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        background-color: #eaf6ff;
+        span {
+            color: rgb(196, 10, 10);
+            font-size: 21px;
+        }
+
+    }
+    &-link {
+        margin-top: 50px;
+        display: block;
+        text-align: center;
+        font-size: 25px;
+        text-decoration: none;
+        color: rgb(6, 10, 243);
+    }
+}

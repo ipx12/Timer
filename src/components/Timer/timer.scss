@@ -1,0 +1,48 @@
+.timer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	input {
+		margin-top: 30px;
+		width: 250px;
+		border: none;
+		border-bottom: 1px solid  rgba($color: #0f0f0f, $alpha: .2);
+		outline: none;
+		padding: 5px 20px;
+		color: blue;
+		font-size: 16px;
+	}
+	input::placeholder {
+		color: blue;
+		text-align: center;
+	}
+	input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+	input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+	input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+	input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+	input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+	input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+	input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+	input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+	&-round {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 30px 0;
+		width: 250px;
+		height: 250px;
+		border-radius: 100%;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		font-size: 30px;
+		color:blue
+
+	}
+
+	
+}
+
+.tab {
+	max-width: none;
+	width: 50%;
+}
