@@ -46,12 +46,16 @@ function generateRandomInteger(min, max) {
 	return Math.floor(min + Math.random()*(max + 1 - min))
 }
 
+const milisecondsToMinets = (minutes) => {
+    return minutes * 60000
+}
+
 const generateGraph = () => {
     const data = [];
     const graphsCount =  generateRandomInteger(10, 15); 
     for (let i = graphsCount; i !== 0; i--) {
-        const randomTimerStart = Date.now() - generateRandomInteger(3600000, 82800000);
-        const randomTimePeriod = generateRandomInteger(600000, 5400000);
+        const randomTimerStart = Date.now() - generateRandomInteger(milisecondsToMinets(60), milisecondsToMinets(1380));
+        const randomTimePeriod = generateRandomInteger(milisecondsToMinets(10), milisecondsToMinets(90));
         const randomTimeEnd = randomTimerStart + randomTimePeriod;
         const randomTimeSpend = new Date(randomTimePeriod)
 

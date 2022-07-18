@@ -20,6 +20,7 @@ import './timer.scss';
 
 const Timer = () => {
 	const [timerName, setTimerName] = useState('')
+	const [intervalId, setIntervalId] = useState(0);
 
 	const dispatch = useDispatch();
 
@@ -27,21 +28,31 @@ const Timer = () => {
 	const showModal = useSelector(modalIsOpen);
 	const {seconds, minutes, hours } = useSelector(timeSpend)
 
-	useEffect(() => {
-		const intrerval = setInterval(() => {
-			if (timerStatus) {
-				dispatch(updateTime())
-			}
-		}, 1000)
+	const intervalActiveToggle = () => {
+		if (intervalId) {
+		  clearInterval(intervalId);
+		  setIntervalId(0);
+		  return;
+		}
+	
+		const newIntervalId = setInterval(() => {
+			dispatch(updateTime());
+		}, 1000);
+		setIntervalId(newIntervalId);
+	  };
 
-		return () => clearInterval(intrerval)
-	}, [timerStatus])
+	useEffect(() => {
+		if (timerStatus) {
+			intervalActiveToggle();
+		}
+	}, [])
 
 
 	const onTimerActive = () => {
 		dispatch(startTimer(Date.now()));
 		dispatch(updateTime());
 		dispatch(timerStatusToggle());
+		intervalActiveToggle();
 	}
 
 	const onTimerStopped = () => {
@@ -49,7 +60,8 @@ const Timer = () => {
 		dispatch(timerStatusToggle());
 		dispatch(addTimer());
 		dispatch(clearTimer());
-		setTimerName('')
+		setTimerName('');
+		intervalActiveToggle();
 	}
 
 	return (

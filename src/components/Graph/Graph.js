@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { v4 as uuid } from 'uuid';
 
 import {
 	BarChart,
@@ -16,9 +15,6 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from '@mui/material/Button';
 
 import './graph.scss'
-
-
-
 
 const Graph = () =>  {
 
@@ -56,7 +52,6 @@ const Graph = () =>  {
 	useEffect(() => {
 		createGraph();
 	},[timers])
-
 
 	return (
 		<div className="graph">
