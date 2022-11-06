@@ -4,7 +4,7 @@ const Page404 = () => {
     return (
         <div style={{'paddingTop': '100px'}}>
             <p style={{"textAlign" : 'center', 'fontWaight' : 'bold', 'fontSize' : '24px'}}>Page doesn't exist</p>
-            <Link style={{'display' : 'block', 'textAlign' : 'center', 'fontWeight' : 'bold', 'fontSize' : '24px', 'marginTop' : '30px'}} to='/'>
+            <Link style={{'display' : 'block', 'textAlign' : 'center', 'fontWeight' : 'bold', 'fontSize' : '24px', 'marginTop' : '30px'}} to='/Timer'>
                 Back to main page
             </Link>
         </div>

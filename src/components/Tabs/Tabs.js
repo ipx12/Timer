@@ -5,10 +5,10 @@ const Tabs = () => {
 	return (
 		<div className="tabs">
 			<div className="tabs-item">
-				<NavLink to='/'>TASK LOG</NavLink>
+				<NavLink end to='/Timer'>TASK LOG</NavLink>
 			</div>
 			<div className="tabs-item">
-				<NavLink to="/tuskLog">TASK CHART</NavLink>
+				<NavLink to="/Timer/tuskLog">TASK CHART</NavLink>
 			</div>
 		</div>
 	)

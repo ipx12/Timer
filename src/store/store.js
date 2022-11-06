@@ -12,14 +12,10 @@ import {
 import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from "@redux-saga/core";
 
-// import { timerWatcher } from "../saga/timerSaga";
-
 import timerReducer from '../components/Timer/timerSlice';
-import sagaReduser from '../saga/sagaReducer/sagaReducer';
 
 const rootReducer = combineReducers({
     timers: timerReducer,
-    saga: sagaReduser
 })
 
 const persistConfig = {
@@ -45,7 +41,5 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-// sagaMiddleware.run(rootSaga);
 
 export default store;

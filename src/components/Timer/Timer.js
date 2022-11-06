@@ -43,7 +43,7 @@ const Timer = () => {
 
 	useEffect(() => {
 		if (timerStatus) {
-			intervalActiveToggle();
+			intervalActiveToggle();	
 		}
 	}, [])
 

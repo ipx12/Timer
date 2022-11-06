@@ -22,7 +22,7 @@ const TuskInfo = () => {
                     <div className="info__block-end"><span>Time end</span>: {timer[0].timeEnd}</div>
                     <div className="info__block-spend"><span>Time spend</span>: {timer[0].timeSpend}</div>
                 </div>
-                <Link className="info-link" to='/'>Back to main page</Link>
+                <Link className="info-link" to='/Timer'>Back to main page</Link>
             </div>
         )
     }
