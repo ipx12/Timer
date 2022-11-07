@@ -15,7 +15,7 @@ const App = ()  => {
 		<BrowserRouter>
 			<div className='app'>
 				<Routes>
-					<Route path="/Timer" element={<MainPage/>}/>
+					<Route path="/Timer/" element={<MainPage/>}/>
 					<Route path="/Timer/tuskLog" element={<TuskChartPage/>}/>
 					<Route path="/Timer/task/:taskId" element={<TuskInfo/>}/>
 					<Route path="*" element={<Page404/>}/>

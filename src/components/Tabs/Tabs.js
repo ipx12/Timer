@@ -5,7 +5,7 @@ const Tabs = () => {
 	return (
 		<div className="tabs">
 			<div className="tabs-item">
-				<NavLink end to='/Timer'>TASK LOG</NavLink>
+				<NavLink end to='/Timer/'>TASK LOG</NavLink>
 			</div>
 			<div className="tabs-item">
 				<NavLink to="/Timer/tuskLog">TASK CHART</NavLink>

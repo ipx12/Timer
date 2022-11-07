@@ -3,6 +3,8 @@ import { toggleShowModal } from '../Timer/timerSlice';
 
 import './modal.scss';
 
+
+
 const Modal = () => {
 
     const dispatch = useDispatch();

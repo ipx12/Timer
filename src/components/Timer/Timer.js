@@ -20,7 +20,6 @@ import './timer.scss';
 
 const Timer = () => {
 	const [timerName, setTimerName] = useState('')
-	const [intervalId, setIntervalId] = useState(0);
 
 	const dispatch = useDispatch();
 
@@ -28,31 +27,26 @@ const Timer = () => {
 	const showModal = useSelector(modalIsOpen);
 	const {seconds, minutes, hours } = useSelector(timeSpend)
 
-	const intervalActiveToggle = () => {
-		if (intervalId) {
-		  clearInterval(intervalId);
-		  setIntervalId(0);
-		  return;
+	useEffect(() => {
+		const timeInterval = timerStatus ?
+			setInterval(() => {
+				dispatch(updateTime());
+			}, 1000) : null
+		
+		return () => {
+			clearInterval(timeInterval)
 		}
-	
-		const newIntervalId = setInterval(() => {
-			dispatch(updateTime());
-		}, 1000);
-		setIntervalId(newIntervalId);
-	  };
+		// eslint-disable-next-line
+	},[timerStatus])
 
 	useEffect(() => {
-		if (timerStatus) {
-			intervalActiveToggle();	
-		}
-	}, [])
-
+		showModal ? document.body.style.overflow = 'hidden' : document.body.style.overflow = "scroll";
+	},[showModal])
 
 	const onTimerActive = () => {
 		dispatch(startTimer(Date.now()));
 		dispatch(updateTime());
 		dispatch(timerStatusToggle());
-		intervalActiveToggle();
 	}
 
 	const onTimerStopped = () => {
@@ -61,7 +55,6 @@ const Timer = () => {
 		dispatch(addTimer());
 		dispatch(clearTimer());
 		setTimerName('');
-		intervalActiveToggle();
 	}
 
 	return (
