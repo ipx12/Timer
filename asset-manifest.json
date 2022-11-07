@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Timer/static/css/main.5646892a.css",
-    "main.js": "/Timer/static/js/main.83576ea2.js",
+    "main.js": "/Timer/static/js/main.a9561ed9.js",
     "index.html": "/Timer/index.html",
     "main.5646892a.css.map": "/Timer/static/css/main.5646892a.css.map",
-    "main.83576ea2.js.map": "/Timer/static/js/main.83576ea2.js.map"
+    "main.a9561ed9.js.map": "/Timer/static/js/main.a9561ed9.js.map"
   },
   "entrypoints": [
     "static/css/main.5646892a.css",
-    "static/js/main.83576ea2.js"
+    "static/js/main.a9561ed9.js"
   ]
 }
